@@ -43,9 +43,10 @@ set fileencodings=utf-8
 set encoding=utf-8 
 " show matching brackets
 autocmd FileType perl set showmatch
-inoremap <Nul> <C-x><C-o>
+inoremap <C-space> <C-x><C-o>
 
 " check perl code with :make
+autocmd FileType javascript set equalprg=js_beautify.pl\ -
 autocmd FileType perl set makeprg=perl\ -Ilib\ -c\ %\ $*
 autocmd FileType perl set errorformat=%f:%l:%m
 autocmd FileType perl set autowrite
@@ -60,10 +61,3 @@ autocmd FileType set equalprg&
 let perl_extended_vars = 1
 
 set iskeyword+=:
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
