@@ -61,3 +61,4 @@ autocmd FileType set equalprg&
 let perl_extended_vars = 1
 
 set iskeyword+=:
+set runtimepath^=~/.vim/bundle/ctrlp.vim
