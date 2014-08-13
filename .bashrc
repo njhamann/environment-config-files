@@ -121,3 +121,13 @@ export PYTHONPATH=$HOME:$PYTHONPATH
 function plackdir() { 
     plackup -MPlack::App::Directory -e 'Plack::App::Directory->new({ root => "./" })->to_app' --port $1;
 }
+
+## for when ssh agent gets screwy
+function refresh_ssha() {
+if [[ -n $TMUX ]]; then
+    NEW_SSH_AUTH_SOCK=$( tmux showenv|grep ^SSH_AUTH_SOCK|cut -d = -f 2 )
+    if [[ -n $NEW_SSH_AUTH_SOCK ]] && [[ -S $NEW_SSH_AUTH_SOCK ]]; then
+        SSH_AUTH_SOCK=$NEW_SSH_AUTH_SOCK
+    fi
+fi
+}
