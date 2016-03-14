@@ -53,6 +53,9 @@ autocmd FileType perl set autowrite
 autocmd FileType perl set expandtab
 autocmd FileType perl set equalprg=perltidy\ -pbp
 autocmd FileType make set noexpandtab
+
+autocmd FileType javascript setlocal sw=2 sts=2 expandtab
+
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let perl_include_pod = 1
 autocmd FileType set equalprg&
